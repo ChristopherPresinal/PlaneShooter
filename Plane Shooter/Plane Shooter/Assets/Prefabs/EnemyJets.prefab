@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7069873917897753683}
   - component: {fileID: 7069873917897753682}
   - component: {fileID: 718994529101234691}
+  - component: {fileID: 420383101871031676}
   m_Layer: 0
   m_Name: EnemyJets
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!82 &7069873917897753692
 AudioSource:
@@ -278,3 +279,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 2
   frecuency: 0.5
+  inverted: 0
+--- !u!114 &420383101871031676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069873917897753681}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbcaf13f62e605458e5d4260459f46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
