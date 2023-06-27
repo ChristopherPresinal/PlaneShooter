@@ -53,11 +53,21 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\BackgroundRepeat.cs" />
     <Compile Include="Assets\Scripts\Patterns.cs" />
+=======
+    <Compile Include="Assets\Scripts\Player\Movement.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Player\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Destructable.cs" />
+    <Compile Include="Assets\Scripts\General\BackgroundRepeat.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Patterns.cs" />
+    <Compile Include="Assets\Scripts\Player\Gun.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

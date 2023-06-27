@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public Gun gun;
+
+    //Array that will hold all the guns
+    Gun[] guns;
+
     public float speed = 0f;
 
     public float minY, maxY;
-
-    //Bullet Object
-    [SerializeField]
-    private GameObject bullet;
-
-    //Bullet Spawn Point
-    [SerializeField]
-    private Transform attackPoints;
 
     //Variable for attack cooldown
     public float attackTimer = 0.35f;
@@ -22,23 +20,50 @@ public class Movement : MonoBehaviour
 
     private bool canAttack;
 
+
     // Start is called before the first frame update
     void Start()
     {
         //current attack timer stores the value of the attack timer
         currentAttackTimer = attackTimer;
+
+        //Gets access to all the guns scipts under the player
+        guns = transform.GetComponentsInChildren<Gun>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         MovePlayer();
-        Attack();
+        
     }
 
     void MovePlayer()
     {
-        if (Input.GetKey(KeyCode.W))
+        //Attack timer is set to in game Time
+        attackTimer += Time.deltaTime;
+
+        //if attack timer is greater that current Attack Timer, can Attack will be ture
+        if(attackTimer > currentAttackTimer)
+        {
+            canAttack = true;
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0)) 
+        {
+            //if can attack is true, the player will shoot, but will also set can attack to false along with restarting the attack timer
+            if(canAttack)
+            {
+                attackTimer = 0f;
+                canAttack = false;
+                gun.Shoot();
+            } 
+            
+        }
+
+        else if (Input.GetKey(KeyCode.W))
         {
             //Moves The Player Up
             Vector3 temp = transform.position;
@@ -70,31 +95,7 @@ public class Movement : MonoBehaviour
             transform.position = temp;
         }
 
+        
+
     }//MovePlayer
-
-    void Attack()
-    {
-        //Attack timer is set to in game Time
-        attackTimer += Time.deltaTime;
-
-        //if attack timer is greater that current Attack Timer, can Attack will be ture
-        if(attackTimer > currentAttackTimer)
-        {
-            canAttack = true;
-        }
-
-        //Allows Player To Shoot
-        if(Input.GetKey(KeyCode.Space))
-        {
-            //if can attack is true, the player will shoot, but will also set can attack to false along with restarting the attack timer
-            if(canAttack)
-            {
-                attackTimer = 0f;
-                canAttack = false;
-
-                //Instantiate allows objects to be spawned
-                Instantiate(bullet, attackPoints.position, Quaternion.identity);
-            }
-        }
-    }//Attack
 }
