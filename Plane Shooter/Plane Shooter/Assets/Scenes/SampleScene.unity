@@ -651,8 +651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2865387209508312117, guid: 827c2c24be7e4e449adfe3ca4664147a, type: 3}
   attackPoints: {fileID: 7219721832431801357, guid: 827c2c24be7e4e449adfe3ca4664147a, type: 3}
-  attackTimer: 0.35
-  currentAttackTimer: 0
 --- !u!4 &1644984387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7069873917897753688, guid: e541bb6b268121d46bb229e354d32bfc, type: 3}
@@ -711,7 +709,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: daf9b3f45e606d44faa84cef45a56e7a, type: 2}
+  - {fileID: 2100000, guid: 4c1f5a6708ac1a246aa7d014ee87708c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
