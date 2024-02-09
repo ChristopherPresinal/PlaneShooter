@@ -45,25 +45,7 @@ public class Movement : MonoBehaviour
         //Attack timer is set to in game Time
         attackTimer += Time.deltaTime;
 
-        //if attack timer is greater that current Attack Timer, can Attack will be ture
-        if(attackTimer > currentAttackTimer)
-        {
-            canAttack = true;
-        }
-
-        if (Input.GetKey(KeyCode.Mouse0)) 
-        {
-            //if can attack is true, the player will shoot, but will also set can attack to false along with restarting the attack timer
-            if(canAttack)
-            {
-                attackTimer = 0f;
-                canAttack = false;
-                gun.Shoot();
-            } 
-            
-        }
-
-        else if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             //Moves The Player Up
             Vector3 temp = transform.position;
@@ -95,7 +77,25 @@ public class Movement : MonoBehaviour
             transform.position = temp;
         }
 
-        
+        //if attack timer is greater that current Attack Timer, can Attack will be ture
+        if (attackTimer > currentAttackTimer)
+        {
+            canAttack = true;
+        }
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            //if can attack is true, the player will shoot, but will also set can attack to false along with restarting the attack timer
+            if (canAttack)
+            {
+                attackTimer = 0f;
+                canAttack = false;
+                gun.Shoot();
+            }
+
+        }
+
+
 
     }//MovePlayer
 }
