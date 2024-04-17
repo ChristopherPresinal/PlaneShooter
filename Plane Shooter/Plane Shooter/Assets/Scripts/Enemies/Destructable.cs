@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
-   /* // Start is called before the first frame update
+    bool canBeDestroyed = false;
+
+     // Start is called before the first frame update
     void Start()
     {
         
@@ -13,18 +15,28 @@ public class Destructable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-       /* gameObject bullet = collision.GetComponent<bullet>();
-
-        if(bullet != null )
+        if (transform.position.x <= 10.5f)
         {
-            Destroy(gameObject);
-            Destroy(bullet);
+            canBeDestroyed = true;
         }
     }
-       */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       //Bullet bullet = collision.GetComponent<Bullet>();
+
+        if (!canBeDestroyed)
+        {
+            return;
+
+        }
+
+        /*if(bullet != null )
+        {
+            Destroy(gameObject);
+            Destroy(bullet.gameObject);
+            
+        }*/
+    }
+       
 }

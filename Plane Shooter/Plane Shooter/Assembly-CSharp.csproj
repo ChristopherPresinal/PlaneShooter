@@ -55,11 +55,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\Movement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Player\Ammo.cs" />
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Player\Weaponry.cs" />
     <Compile Include="Assets\Scripts\Enemies\Destructable.cs" />
     <Compile Include="Assets\Scripts\General\BackgroundRepeat.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patterns.cs" />
     <Compile Include="Assets\Scripts\Player\Gun.cs" />
+    <Compile Include="Assets\Scripts\Player\AmmoScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
